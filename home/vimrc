@@ -1,0 +1,33 @@
+" Configuration file for vim
+set modelines=0		" CVE-2007-2438
+
+" Normally we use vim-extensions. If you want true vi-compatibility
+" remove change the following statements
+set nocompatible	" Use Vim defaults instead of 100% vi compatibility
+"set backspace=2		" more powerful backspacing
+
+filetype indent plugin on
+syntax on
+set hidden
+set wildmenu
+set showcmd
+set hlsearch
+set ignorecase
+set smartcase
+set backspace=indent,eol,start
+set autoindent 
+set nostartofline
+set ruler
+set laststatus=2
+set confirm 
+set visualbell
+set pastetoggle=<F10>
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+nnoremap <C-L> :nohl<CR><C-L>
+
+" Don't write backup file if vim is being called by "crontab -e"
+au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
+" Don't write backup file if vim is being called by "chpass"
+au BufWrite /private/etc/pw.* set nowritebackup nobackup
